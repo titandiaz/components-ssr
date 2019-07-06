@@ -1,3 +1,4 @@
+import Vue from "vue";
 // import Chat from './components/chat/chat';
 // import Whatsapp from './components/chat/whatsapp.vue';
 // import Preloader from './components/preloaders/preloader1';
@@ -37,12 +38,12 @@
 // import Footer3 from './components/footers/footer3';
 // import Order1 from './components/_order/order1';
 // import setting from './settings';
-import Prueba from "./components/Prueba";
-import Prueba2 from "./components/Prueba2";
+import KoPrueba from "./components/Prueba";
+import KoPrueba2 from "./components/Prueba2";
 
-const components = [
-  Prueba,
-  Prueba2
+const Components = {
+  KoPrueba,
+  KoPrueba2
   // ...setting,
   // Chat,
   // Whatsapp,
@@ -82,12 +83,9 @@ const components = [
   // Footer3,
   // Order1,
   // Video1
-];
-
-const modules = {};
-modules.install = Vue => {
-  for (let i = 0, size = components.length; i < size; i += 1) {
-    Vue.component(components[i].name, components[i]);
-  }
 };
-export default modules;
+
+Object.keys(Components).forEach(name => {
+  Vue.component(name, Components[name]);
+});
+export default Components;

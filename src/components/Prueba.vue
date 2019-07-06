@@ -10,7 +10,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .prueba {
   background-color: peru;
   height: 100px;
